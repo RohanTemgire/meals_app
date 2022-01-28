@@ -19,7 +19,8 @@ class CategoriesScreen extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         children: DUMMY_CATEGORIES
             .map(
-              (catdata) => CategoryItem(catdata.title, catdata.color),
+              (catdata) =>
+                  CategoryItem(catdata.id, catdata.title, catdata.color),
             )
             .toList(),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
@@ -28,6 +29,7 @@ class CategoriesScreen extends StatelessWidget {
             mainAxisSpacing: 20,
             childAspectRatio: 2.5 / 2),
       ),
+      // bottomNavigationBar: Text('this is bottom navigator bar'),
     );
   }
 }
