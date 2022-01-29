@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './categories_meals_screen.dart';
+
+import '../screens/categories_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   // const CategoryItem({ Key? key }) : super(key: key);
