@@ -5,6 +5,8 @@ import './categories_screen.dart';
 
 void main() => runApp(MyApp());
 
+//just for checking
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
