@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'screens/categories_meals_screen.dart';
-import 'screens/categories_screen.dart';
+import './screens/categories_meals_screen.dart';
+import './screens/categories_screen.dart';
+import './screens/meal_detail_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
         // '/category-meals': (ctx) => CategoriesMealsScreen(),
         //here there can be spelling errors and bc of that error your app can break so there is another way producing the same output
         CategoriesMealsScreen.routeName: (ctx) => CategoriesMealsScreen(),
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
       },
     );
   }
