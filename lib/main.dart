@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-
+import './screens/filters_screen.dart';
 import './screens/tabs_screen.dart';
 import './screens/categories_meals_screen.dart';
 import './screens/categories_screen.dart';
@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
         //here there can be spelling errors and bc of that error your app can break so there is another way producing the same output
         CategoriesMealsScreen.routeName: (ctx) => CategoriesMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+        FiltersScreen.routeName: (ctx) => FiltersScreen(),
       },
 
       // onGenerateRoute: (settings) {
