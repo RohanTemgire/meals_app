@@ -9,6 +9,10 @@ import '../dummy_data.dart';
 class CategoriesMealsScreen extends StatefulWidget {
   static const routeName = 'category-meals';
 
+  final List<Meal> availableMeals;
+
+  CategoriesMealsScreen(this.availableMeals);
+
   @override
   State<CategoriesMealsScreen> createState() => _CategoriesMealsScreenState();
 }
@@ -40,7 +44,7 @@ class _CategoriesMealsScreenState extends State<CategoriesMealsScreen> {
         as String; //here this will run only when our screen has been initalized
     final categoryId = routeArgs['id'];
 
-    displayedMeals = DUMMY_MEALS.where((meal) {
+    displayedMeals = widget.availableMeals.where((meal) {
       return meal.categories.contains(categoryId);
     }).toList();
     super.didChangeDependencies();
@@ -67,7 +71,7 @@ class _CategoriesMealsScreenState extends State<CategoriesMealsScreen> {
             duration: displayedMeals[index].duration,
             complexity: displayedMeals[index].complexity,
             affordability: displayedMeals[index].affordability,
-            removeItem: _removeMeal,
+            // removeItem: _removeMeal,
           );
         },
         itemCount: displayedMeals.length,

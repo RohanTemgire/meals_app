@@ -13,7 +13,7 @@ class MealsItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
-  final Function removeItem;
+  // final Function removeItem;
 
   MealsItem({
     required this.id,
@@ -22,7 +22,7 @@ class MealsItem extends StatelessWidget {
     required this.duration,
     required this.complexity,
     required this.affordability,
-    required this.removeItem,
+    // required this.removeItem,
   });
 
   get complexityText {
@@ -67,7 +67,7 @@ class MealsItem extends StatelessWidget {
         .pushNamed(MealDetailScreen.routeName, arguments: id)
         .then((value) {
       if (value != null) {
-        removeItem(value);
+        // removeItem(value);
       }
       ; //now 'then' here excutes when the page you pushed is poped and not soon when the pushNamed argment is done.
     });

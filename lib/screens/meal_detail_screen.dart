@@ -6,6 +6,11 @@ class MealDetailScreen extends StatelessWidget {
   static const routeName = '/meal-detail';
   // const MealDetailPage({ Key? key }) : super(key: key);
 
+  final Function toggleFavorite;
+  final Function isFavoriteMeal;
+
+  MealDetailScreen(this.toggleFavorite, this.isFavoriteMeal);
+
   Widget buildSectionTitle(BuildContext context, title) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 15),
@@ -86,11 +91,17 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).pop(mealID);
-        },
-        child: Icon(Icons.delete),
+        onPressed: () => toggleFavorite(mealID),
+        child: Icon(isFavoriteMeal(mealID)
+            ? Icons.favorite
+            : Icons.favorite_border_rounded),
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.of(context).pop(mealID);
+      //   },
+      //   child: Icon(Icons.delete),
+      // ),
     );
   }
 }

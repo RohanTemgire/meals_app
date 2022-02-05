@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/main_drawer.dart';
-
+import '../models/meal.dart';
 import './categories_screen.dart';
 import './favorites_screen.dart';
 
 class TabsScreen extends StatefulWidget {
-  const TabsScreen({Key? key}) : super(key: key);
+  // const TabsScreen({Key? key}) : super(key: key);
+
+  final List<Meal>favoriteMeals;
+
+  TabsScreen(this.favoriteMeals);
 
   @override
   _TabsScreenState createState() => _TabsScreenState();
@@ -42,15 +46,27 @@ class _TabsScreenState extends State<TabsScreen> {
   // }
 
   // for bottom navigationbar
-  List<Map<String, Object>> _pages = [
-    {'pages': CategoriesScreen(), 'title': 'Categories'},
-    {'pages': FavoritesScreen(), 'title': 'Favorites'},
-  ];
+  // List<Map<String, Object>> _pages = [
+  //   {'pages': CategoriesScreen(), 'title': 'Categories'},
+  //   {'pages': FavoritesScreen(widget.favoriteMeals), 'title': 'Favorites'}, 
+  //   //here we cant access the widget cause we are initilizing. 
+  //    it is easy to fix since we have to add that in the init method
+  // ];
+
+  late List<Map<String, Object>> _pages;
   int _pageIndex = 0;
   void _selectPage(int index) {
     setState(() {
       _pageIndex = index;
     });
+  }
+
+  @override
+  initState(){
+    _pages = [
+    {'pages': CategoriesScreen(), 'title': 'Categories'},
+    {'pages': FavoritesScreen(widget.favoriteMeals), 'title': 'Favorites'}, 
+  ];
   }
 
   @override
